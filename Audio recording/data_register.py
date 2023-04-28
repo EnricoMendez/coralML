@@ -3,8 +3,8 @@ import re
 import serial
 
 # Constants
-port_name = serial.Serial("COM6", 9600)
-file_name = 'Audios/audio1.txt'
+port_name = serial.Serial("COM4", 9600)
+file_name = 'data_set/ruido.txt'
 
 file = open(file_name, 'w')
 

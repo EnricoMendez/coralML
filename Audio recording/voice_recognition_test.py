@@ -12,7 +12,7 @@ data_save = []
 start_time = time.time()
 
 ### Constants
-port_name = serial.Serial("COM6", 9600)
+port_name = serial.Serial("COM4", 9600)
 folder = 'data_set/'
 file_name = 'coral_take.txt'
 fs = 16000
@@ -23,8 +23,8 @@ nfft = 1024
 hop = nfft // 2
 
 # Constants from the data set adquisition
-time_per_sample = 2.5
-samples_per_record = int (1600*time_per_sample)
+time_per_sample = 2
+samples_per_record = int (3327)
 
 
 def clean(port):

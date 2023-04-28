@@ -1,6 +1,8 @@
 import tensorflow as tf
 import numpy as np
 
+
+
 # Cargar el modelo desde el archivo .tflite
 model_name = 'command_model.tflite'
 interpreter = tf.lite.Interpreter(model_path=model_name)
@@ -22,4 +24,11 @@ def prediction(input,input_details,interpreter,output_details):
 
     # Obtener los resultados del modelo
     output_data = interpreter.get_tensor(output_details[0]['index'])
+    threshold = 0.9
+    if output_data[0,0]>threshold:
+        print('Now')
+    if output_data[0,1]>threshold:
+        print('Coral take')
+    if output_data[0,2]>threshold:
+        print('Noise')
     print(output_data)

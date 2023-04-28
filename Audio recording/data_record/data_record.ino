@@ -17,7 +17,7 @@ bool noiseDetected = false;
 
 
 
-int noiseThreshold = 800;
+int noiseThreshold = 200;
 int timeSet = 2.5;
 int samplesSet = 1600 * timeSet;
 int samplesRecorded = 0;
@@ -76,6 +76,7 @@ void loop() {
       if (samplesRecorded < samplesSet) {
         for (int i = 0; i < samplesRead; i++) {
           Serial.println(sampleBuffer[i]);
+          //Serial.println(samplesRecorded);
           samplesRecorded ++;
         }
       } else {
