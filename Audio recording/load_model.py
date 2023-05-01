@@ -16,7 +16,7 @@ def prediction(input,input_details,interpreter,output_details):
     # Asignar los datos de entrada al tensor de entrada del modelo
     input_data = np.expand_dims(input.astype('float32'), axis=0)
     interpreter.allocate_tensors()
-
+    commands = ['now', 'take','fetch','ruido']
     interpreter.set_tensor(input_details[0]['index'], input_data)
 
     # Ejecutar el modelo
@@ -25,10 +25,6 @@ def prediction(input,input_details,interpreter,output_details):
     # Obtener los resultados del modelo
     output_data = interpreter.get_tensor(output_details[0]['index'])
     threshold = 0.9
-    if output_data[0,0]>threshold:
-        print('Now')
-    if output_data[0,1]>threshold:
-        print('Coral take')
-    if output_data[0,2]>threshold:
-        print('Noise')
+    true = np.argmax(output_data[0])
+    print(commands[true])
     print(output_data)
