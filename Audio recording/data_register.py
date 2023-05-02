@@ -3,11 +3,10 @@ import re
 import serial
 
 # Constants
-port_name = serial.Serial("COM4", 9600)
-file_name = 'data_set/ruido.txt'
+port_name = serial.Serial("COM6", 9600)
+file_name = 'data_set/slider.txt'
 
 file = open(file_name, 'w')
-
 
 def clean(port):
     port.close()

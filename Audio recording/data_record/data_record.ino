@@ -17,7 +17,7 @@ bool noiseDetected = false;
 
 
 
-int noiseThreshold = 200;
+int noiseThreshold = 500;
 int timeSet = 2.5;
 int samplesSet = 1600 * timeSet;
 int samplesRecorded = 0;
