@@ -74,9 +74,13 @@ void loop() {
     } else {
       // Noise has been detected, print data for 10 seconds
       if (samplesRecorded < samplesSet) {
+        unsigned long tiempoInicio = millis();
         for (int i = 0; i < samplesRead; i++) {
-          Serial.println(sampleBuffer[i]);
-          //Serial.println(samplesRecorded);
+          //Serial.println(sampleBuffer[i]);
+          unsigned long tiempoFinal = millis();
+          unsigned long duracionCiclo = tiempoFinal - tiempoInicio;
+          //Serial.println(duracionCiclo);
+          Serial.println(samplesRecorded);
           samplesRecorded ++;
         }
       } else {

@@ -24,7 +24,8 @@ def prediction(input,input_details,interpreter,output_details):
 
     # Obtener los resultados del modelo
     output_data = interpreter.get_tensor(output_details[0]['index'])
-    threshold = 0.9
+    threshold = 0.8
     true = np.argmax(output_data[0])
-    print(commands[true])
+    if output_data[0][true] > threshold:
+        print(commands[true])
     print(output_data)

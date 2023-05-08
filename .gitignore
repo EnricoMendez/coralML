@@ -396,3 +396,18 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+
+Audio recording/driver_spectrograms/
+Audio recording/cancel_spectrograms/
+Audio recording/crank_spectrograms/
+Audio recording/fetch_spectrograms/
+Audio recording/now_spectrograms/
+Audio recording/noise_spectrograms/
+Audio recording/pillow_spectrograms/
+Audio recording/piston_spectrograms/
+Audio recording/rod_spectrograms/
+Audio recording/slider_spectrograms/
+Audio recording/stop_spectrograms/
+Audio recording/wrench_spectrograms/
+Audio recording/take_spectrograms/
+Audio recording/save.py
