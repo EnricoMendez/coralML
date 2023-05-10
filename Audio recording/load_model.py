@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import tensorflow as tf
 import numpy as np
 
@@ -16,7 +17,8 @@ def prediction(input,input_details,interpreter,output_details):
     # Asignar los datos de entrada al tensor de entrada del modelo
     input_data = np.expand_dims(input.astype('float32'), axis=0)
     interpreter.allocate_tensors()
-    commands = ['now', 'take','fetch','noise','cancel','driver','pillow','slider','rod','stop','wrench','piston','crank']
+    # commands = ['now', 'take','fetch','noise','cancel']
+    commands = ['take', 'wrench','fetch','noise','now','cancel']
     interpreter.set_tensor(input_details[0]['index'], input_data)
 
     # Ejecutar el modelo
@@ -24,7 +26,7 @@ def prediction(input,input_details,interpreter,output_details):
 
     # Obtener los resultados del modelo
     output_data = interpreter.get_tensor(output_details[0]['index'])
-    threshold = 0.8
+    threshold = 0.9
     true = np.argmax(output_data[0])
     if output_data[0][true] > threshold:
         print(commands[true])

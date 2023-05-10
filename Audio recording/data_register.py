@@ -1,10 +1,12 @@
+#!/usr/bin/env python3
 import atexit
 import re
 import serial
 
 # Constants
-port_name = serial.Serial("COM6", 9600)
-file_name = 'data_set/slider.txt'
+# port_name = serial.Serial("COM6", 9600)
+port_name = serial.Serial("/dev/ttyACM0", 230400)
+file_name = 'data_set/prueba_ivo.txt'
 
 file = open(file_name, 'w')
 
