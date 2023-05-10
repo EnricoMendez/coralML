@@ -80,7 +80,7 @@ void loop() {
           unsigned long tiempoFinal = millis();
           unsigned long duracionCiclo = tiempoFinal - tiempoInicio;
           //Serial.println(duracionCiclo);
-          Serial.println(samplesRecorded);
+          //Serial.println(samplesRecorded);
           samplesRecorded ++;
         }
       } else {
