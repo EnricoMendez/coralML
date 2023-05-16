@@ -17,7 +17,7 @@ def prediction(input,input_details,interpreter,output_details):
     # Asignar los datos de entrada al tensor de entrada del modelo
     input_data = np.expand_dims(input.astype('float32'), axis=0)
     interpreter.allocate_tensors()
-    commands = ['go', 'take','bring','noise','cancel','one','two','three','four','five','six','seven']
+    commands = ['noise','go', 'take','bring','cancel','one','two','three','four','five','six','seven']
     # commands = ['now', 'take','fetch','noise','cancel','driver','pillow','slider','stick','stop','wrench','piston','crank']
     
     interpreter.set_tensor(input_details[0]['index'], input_data)
