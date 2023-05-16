@@ -13,8 +13,8 @@ data_save = []
 start_time = time.time()
 
 ### Constants
-# port_name = serial.Serial("COM4", 9600)
-port_name = serial.Serial("/dev/ttyACM0", 9600)
+port_name = serial.Serial("COM3", 9600)
+#port_name = serial.Serial("/dev/ttyACM0", 9600)
 folder = 'data_set/'
 file_name = 'coral_take.txt'
 fs = 16000
