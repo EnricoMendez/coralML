@@ -2,8 +2,6 @@
 import tensorflow as tf
 import numpy as np
 
-
-
 # Cargar el modelo desde el archivo .tflite
 model_name = 'command_model.tflite'
 interpreter = tf.lite.Interpreter(model_path=model_name)
@@ -27,8 +25,12 @@ def prediction(input,input_details,interpreter,output_details):
 
     # Obtener los resultados del modelo
     output_data = interpreter.get_tensor(output_details[0]['index'])
-    threshold = 0.9
+    threshold = 0.80
     true = np.argmax(output_data[0])
     if output_data[0][true] > threshold:
         print(commands[true])
-    print(output_data)
+        print(output_data[0][true])
+    else:
+        print('Not recognized') 
+        print(output_data)
+    
