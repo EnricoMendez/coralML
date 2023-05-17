@@ -55,6 +55,7 @@ while True:
         # print("El ciclo tardó", elapsed_time, "segundos en ejecutarse.")
         data_array = np.array(data_save, dtype=np.float64) # convertir data_save a un vector NumPy de tipo float64
         spec, freqs, times, _ = plt.specgram(data_array, NFFT=nfft, Fs=fs, window=win, noverlap=hop, mode='magnitude')
+        plt.close()
         data_save = []
         spec = np.expand_dims(spec, axis=0)
         
