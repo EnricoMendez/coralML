@@ -62,4 +62,3 @@ while True:
         start_time = time.time()
         prediction(spec,input_details,interpreter,output_details)
         # print(spec.shape)
-    
