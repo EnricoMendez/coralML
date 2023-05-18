@@ -6,6 +6,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import time
 from load_model import *
+import os
 
 ### Variables
 inputs=[]
@@ -60,5 +61,13 @@ while True:
         
         # Iniciar el temporizador
         start_time = time.time()
-        prediction(spec,input_details,interpreter,output_details)
+        print("m 1")
+        prediction(spec,input_details_1,interpreter_1,output_details_1)
+        print("m 2")
+        prediction(spec,input_details_2,interpreter_2,output_details_2)
+        print("m 3")
+        prediction(spec,input_details_3,interpreter_3,output_details_3)
         # print(spec.shape)
+        print('--------------------------')
+        print('')
+    
