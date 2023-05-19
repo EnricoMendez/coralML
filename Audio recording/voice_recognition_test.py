@@ -3,9 +3,11 @@ import atexit
 import re
 import serial
 import numpy as np
+import statistics
 import matplotlib.pyplot as plt
 import time
 from load_model import *
+import os
 
 ### Variables
 inputs=[]
@@ -15,8 +17,6 @@ start_time = time.time()
 ### Constants
 port_name = serial.Serial("COM3", 9600)
 #port_name = serial.Serial("/dev/ttyACM0", 9600)
-folder = 'data_set/'
-file_name = 'coral_take.txt'
 fs = 16000
 
 # Definir los parámetros para el espectrograma
@@ -36,7 +36,6 @@ def clean(port):
 atexit.register(clean, port=port_name)
 
 while True:
-    # print(len(data_save) < samples_per_record)
     if len(data_save) < samples_per_record:
         # print('recording')
         data = port_name.readline()
@@ -61,6 +60,16 @@ while True:
         
         # Iniciar el temporizador
         start_time = time.time()
-        prediction(spec,input_details,interpreter,output_details)
+
+        #p0 = prediction(spec,input_details_0,interpreter_0,output_details_0)
+        #p1 = prediction(spec,input_details_1,interpreter_1,output_details_1)
+        #p2 = prediction(spec,input_details_2,interpreter_2,output_details_2)
+        #p3 = prediction(spec,input_details_3,interpreter_3,output_details_3)
+        #p4 = prediction(spec,input_details_4,interpreter_4,output_details_4)
+        #predictions= [p0, p1, p2, p3, p4]
+        print(prediction(spec, input_details, interpreter, output_details))
+        #print(statistics.mode(predictions))
         # print(spec.shape)
+        print('--------------------------')
+        print('')
     
