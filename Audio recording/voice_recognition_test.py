@@ -15,8 +15,8 @@ data_save = []
 start_time = time.time()
 
 ### Constants
-port_name = serial.Serial("COM3", 9600)
-#port_name = serial.Serial("/dev/ttyACM0", 9600)
+# port_name = serial.Serial("COM3", 9600)
+port_name = serial.Serial("/dev/ttyACM0", 9600)
 fs = 16000
 
 # Definir los parámetros para el espectrograma
