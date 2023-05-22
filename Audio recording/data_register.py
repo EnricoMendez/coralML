@@ -4,9 +4,9 @@ import re
 import serial
 
 # Constants
-# port_name = serial.Serial("COM6", 9600)
-port_name = serial.Serial("/dev/ttyACM0", 230400)
-file_name = 'data_set/go3.txt'
+port_name = serial.Serial("COM5", 9600)
+#port_name = serial.Serial("/dev/ttyACM0", 230400)
+file_name = 'data_set/noise2.txt'
 
 file = open(file_name, 'w')
 
