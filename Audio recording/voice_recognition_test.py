@@ -15,14 +15,15 @@ data_save = []
 start_time = time.time()
 
 ### Constants
-# port_name = serial.Serial("COM3", 9600)
-port_name = serial.Serial("/dev/ttyACM0", 9600)
+port_name = serial.Serial("COM5", 9600)
+#port_name = serial.Serial("/dev/ttyACM0", 9600)
 fs = 16000
 
 # Definir los parámetros para el espectrograma
 win = np.hamming(1024)
 nfft = 1024
 hop = nfft // 2
+
 
 # Constants from the data set adquisition
 time_per_sample = 2

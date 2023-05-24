@@ -6,16 +6,13 @@ import numpy as np
 # interpreters = [tf.lite.Interpreter(model_path=model_name) for model_name in model_names]
 # input_details = [interpreter.get_input_details() for interpreter in interpreters]
 # output_details = [interpreter.get_output_details() for interpreter in interpreters]
-model_name = 'go.tflite'
+model_name = 'numbers_model.tflite'
 interpreter = tf.lite.Interpreter(model_path=model_name)
 input_details = interpreter.get_input_details()
 output_details = interpreter.get_output_details()
-
-commands = ['noise','go', 'take','bring','cancel','one','two','three','four','five','six','seven']
 commands = ['noise','bring','cancel','go', 'take']
 commands = ['noise','cancel','one','two','three','four','five','six','seven']
-commands = ['noise', 'go']
-commands = ['noise', 'take','bring','go']
+
 threshold = 0.90
 
 def prediction_multi(input, input_details, interpreter, output_details):
