@@ -6,12 +6,14 @@ import numpy as np
 # interpreters = [tf.lite.Interpreter(model_path=model_name) for model_name in model_names]
 # input_details = [interpreter.get_input_details() for interpreter in interpreters]
 # output_details = [interpreter.get_output_details() for interpreter in interpreters]
-model_name = 'numbers_model.tflite'
+model_name = 'verbs_model_2.tflite'
 interpreter = tf.lite.Interpreter(model_path=model_name)
 input_details = interpreter.get_input_details()
 output_details = interpreter.get_output_details()
-commands = ['noise','bring','cancel','go', 'take']
-commands = ['noise','cancel','one','two','three','four','five','six','seven']
+if "verbs" in model_name:
+    commands = ['noise', 'take','bring','go','cancel']
+else:
+    commands = ['noise','cancel','one','two','three','four','five','six','seven']
 
 threshold = 0.90
 
@@ -42,10 +44,10 @@ def prediction(input,input_details,interpreter,output_details):
 
     # Obtener los resultados del modelo
     output_data = interpreter.get_tensor(output_details[0]['index'])
-    threshold = 0.90
+    threshold = 0.70
     true = np.argmax(output_data[0])
     if output_data[0][true] > threshold:
-        return(commands[true])
+        return(commands[true], output_data[0][true])
     else:
         return('Not recognized') 
         #print(output_data)
